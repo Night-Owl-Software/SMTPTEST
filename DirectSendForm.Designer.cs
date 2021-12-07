@@ -29,6 +29,7 @@ namespace SMTPTEST
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectSendForm));
             this.lblAuthMailServer = new System.Windows.Forms.Label();
             this.lblAuthEmailAddress = new System.Windows.Forms.Label();
             this.lblMailFrom = new System.Windows.Forms.Label();
@@ -46,10 +47,10 @@ namespace SMTPTEST
             this.boolOverrideMailSubject = new System.Windows.Forms.CheckBox();
             this.boolOverrideMailBody = new System.Windows.Forms.CheckBox();
             this.grpMailDetails = new System.Windows.Forms.GroupBox();
+            this.lblMailToDomain = new System.Windows.Forms.Label();
+            this.boolOverrideMailFrom = new System.Windows.Forms.CheckBox();
             this.btnSendMail = new System.Windows.Forms.Button();
             this.btnCloseForm = new System.Windows.Forms.Button();
-            this.boolOverrideMailFrom = new System.Windows.Forms.CheckBox();
-            this.lblMailToDomain = new System.Windows.Forms.Label();
             this.grpAuthMailSettings.SuspendLayout();
             this.grpMailDetails.SuspendLayout();
             this.SuspendLayout();
@@ -220,6 +221,25 @@ namespace SMTPTEST
             this.grpMailDetails.TabStop = false;
             this.grpMailDetails.Text = "Mail Details";
             // 
+            // lblMailToDomain
+            // 
+            this.lblMailToDomain.AutoSize = true;
+            this.lblMailToDomain.Location = new System.Drawing.Point(164, 57);
+            this.lblMailToDomain.Name = "lblMailToDomain";
+            this.lblMailToDomain.Size = new System.Drawing.Size(80, 13);
+            this.lblMailToDomain.TabIndex = 17;
+            this.lblMailToDomain.Text = "@example.com";
+            // 
+            // boolOverrideMailFrom
+            // 
+            this.boolOverrideMailFrom.AutoSize = true;
+            this.boolOverrideMailFrom.Location = new System.Drawing.Point(271, 31);
+            this.boolOverrideMailFrom.Name = "boolOverrideMailFrom";
+            this.boolOverrideMailFrom.Size = new System.Drawing.Size(66, 17);
+            this.boolOverrideMailFrom.TabIndex = 4;
+            this.boolOverrideMailFrom.Text = "Override";
+            this.boolOverrideMailFrom.UseVisualStyleBackColor = true;
+            // 
             // btnSendMail
             // 
             this.btnSendMail.Location = new System.Drawing.Point(12, 348);
@@ -238,25 +258,6 @@ namespace SMTPTEST
             this.btnCloseForm.Text = "Close";
             this.btnCloseForm.UseVisualStyleBackColor = true;
             // 
-            // boolOverrideMailFrom
-            // 
-            this.boolOverrideMailFrom.AutoSize = true;
-            this.boolOverrideMailFrom.Location = new System.Drawing.Point(271, 31);
-            this.boolOverrideMailFrom.Name = "boolOverrideMailFrom";
-            this.boolOverrideMailFrom.Size = new System.Drawing.Size(66, 17);
-            this.boolOverrideMailFrom.TabIndex = 4;
-            this.boolOverrideMailFrom.Text = "Override";
-            this.boolOverrideMailFrom.UseVisualStyleBackColor = true;
-            // 
-            // lblMailToDomain
-            // 
-            this.lblMailToDomain.AutoSize = true;
-            this.lblMailToDomain.Location = new System.Drawing.Point(164, 57);
-            this.lblMailToDomain.Name = "lblMailToDomain";
-            this.lblMailToDomain.Size = new System.Drawing.Size(80, 13);
-            this.lblMailToDomain.TabIndex = 17;
-            this.lblMailToDomain.Text = "@example.com";
-            // 
             // DirectSendForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -266,6 +267,7 @@ namespace SMTPTEST
             this.Controls.Add(this.btnSendMail);
             this.Controls.Add(this.grpMailDetails);
             this.Controls.Add(this.grpAuthMailSettings);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DirectSendForm";
             this.Text = "Office365 Direct Send Test";
             this.grpAuthMailSettings.ResumeLayout(false);

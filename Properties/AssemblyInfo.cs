@@ -5,19 +5,19 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SMTPTEST")]
+[assembly: AssemblyTitle("SMTP Troubleshooter")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("SMTPTEST")]
-[assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
+[assembly: AssemblyCompany("Night Owl Software")]
+[assembly: AssemblyProduct("SMTP Troubleshooter")]
+[assembly: AssemblyCopyright("Copyright © Night Owl Software LLC 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 // Setting ComVisible to false makes the types in this assembly not visible
 // to COM components.  If you need to access a type in this assembly from
 // COM, set the ComVisible attribute to true on that type.
-[assembly: ComVisible(false)]
+[assembly: ComVisible(true)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
 [assembly: Guid("050d894e-dbf7-4919-9a56-fb9a63c1bcf3")]

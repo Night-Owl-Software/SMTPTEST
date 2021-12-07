@@ -29,6 +29,7 @@ namespace SMTPTEST
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.tboxAuthEmailAddress = new System.Windows.Forms.TextBox();
             this.tboxAuthPassword = new System.Windows.Forms.TextBox();
             this.lblAuthEmailAddress = new System.Windows.Forms.Label();
@@ -298,6 +299,7 @@ namespace SMTPTEST
             this.Controls.Add(this.grpMailDetails);
             this.Controls.Add(this.grpAuthentication);
             this.Controls.Add(this.menuMain);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuMain;
             this.Name = "MainForm";
             this.Text = "Office365 SMTP Test";
