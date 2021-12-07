@@ -34,6 +34,10 @@ namespace SMTPTEST
             this.lblAuthEmailAddress = new System.Windows.Forms.Label();
             this.lblAuthPassword = new System.Windows.Forms.Label();
             this.grpAuthentication = new System.Windows.Forms.GroupBox();
+            this.lblAuthMailServer = new System.Windows.Forms.Label();
+            this.tboxAuthMailServer = new System.Windows.Forms.TextBox();
+            this.boolAuthEnableSSL = new System.Windows.Forms.CheckBox();
+            this.lblAuthPortNumber = new System.Windows.Forms.Label();
             this.tboxAuthPort = new System.Windows.Forms.TextBox();
             this.grpMailDetails = new System.Windows.Forms.GroupBox();
             this.tboxMailBody = new System.Windows.Forms.RichTextBox();
@@ -46,13 +50,10 @@ namespace SMTPTEST
             this.tboxMailTo = new System.Windows.Forms.TextBox();
             this.btnSendMail = new System.Windows.Forms.Button();
             this.btnResetForm = new System.Windows.Forms.Button();
-            this.lblAuthPortNumber = new System.Windows.Forms.Label();
-            this.boolAuthEnableSSL = new System.Windows.Forms.CheckBox();
-            this.lblAuthMailServer = new System.Windows.Forms.Label();
-            this.tboxAuthMailServer = new System.Windows.Forms.TextBox();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.testsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItemOffice365DirectSend = new System.Windows.Forms.ToolStripMenuItem();
+            this.boolOverrideMailFrom = new System.Windows.Forms.CheckBox();
             this.grpAuthentication.SuspendLayout();
             this.grpMailDetails.SuspendLayout();
             this.menuMain.SuspendLayout();
@@ -109,6 +110,41 @@ namespace SMTPTEST
             this.grpAuthentication.TabStop = false;
             this.grpAuthentication.Text = "Authentication Details";
             // 
+            // lblAuthMailServer
+            // 
+            this.lblAuthMailServer.AutoSize = true;
+            this.lblAuthMailServer.Location = new System.Drawing.Point(6, 29);
+            this.lblAuthMailServer.Name = "lblAuthMailServer";
+            this.lblAuthMailServer.Size = new System.Drawing.Size(63, 13);
+            this.lblAuthMailServer.TabIndex = 10;
+            this.lblAuthMailServer.Text = "Mail Server:";
+            // 
+            // tboxAuthMailServer
+            // 
+            this.tboxAuthMailServer.Location = new System.Drawing.Point(88, 26);
+            this.tboxAuthMailServer.Name = "tboxAuthMailServer";
+            this.tboxAuthMailServer.Size = new System.Drawing.Size(200, 20);
+            this.tboxAuthMailServer.TabIndex = 0;
+            // 
+            // boolAuthEnableSSL
+            // 
+            this.boolAuthEnableSSL.AutoSize = true;
+            this.boolAuthEnableSSL.Location = new System.Drawing.Point(175, 126);
+            this.boolAuthEnableSSL.Name = "boolAuthEnableSSL";
+            this.boolAuthEnableSSL.Size = new System.Drawing.Size(113, 17);
+            this.boolAuthEnableSSL.TabIndex = 4;
+            this.boolAuthEnableSSL.Text = "Enable SSL/TLS?";
+            this.boolAuthEnableSSL.UseVisualStyleBackColor = true;
+            // 
+            // lblAuthPortNumber
+            // 
+            this.lblAuthPortNumber.AutoSize = true;
+            this.lblAuthPortNumber.Location = new System.Drawing.Point(53, 126);
+            this.lblAuthPortNumber.Name = "lblAuthPortNumber";
+            this.lblAuthPortNumber.Size = new System.Drawing.Size(29, 13);
+            this.lblAuthPortNumber.TabIndex = 7;
+            this.lblAuthPortNumber.Text = "Port:";
+            // 
             // tboxAuthPort
             // 
             this.tboxAuthPort.Location = new System.Drawing.Point(88, 123);
@@ -118,6 +154,7 @@ namespace SMTPTEST
             // 
             // grpMailDetails
             // 
+            this.grpMailDetails.Controls.Add(this.boolOverrideMailFrom);
             this.grpMailDetails.Controls.Add(this.tboxMailBody);
             this.grpMailDetails.Controls.Add(this.lblMailBody);
             this.grpMailDetails.Controls.Add(this.lblMailSubject);
@@ -179,7 +216,8 @@ namespace SMTPTEST
             // 
             this.tboxMailFrom.Location = new System.Drawing.Point(45, 54);
             this.tboxMailFrom.Name = "tboxMailFrom";
-            this.tboxMailFrom.Size = new System.Drawing.Size(243, 20);
+            this.tboxMailFrom.ReadOnly = true;
+            this.tboxMailFrom.Size = new System.Drawing.Size(171, 20);
             this.tboxMailFrom.TabIndex = 6;
             // 
             // lblMailTo
@@ -216,41 +254,6 @@ namespace SMTPTEST
             this.btnResetForm.Text = "Reset";
             this.btnResetForm.UseVisualStyleBackColor = true;
             // 
-            // lblAuthPortNumber
-            // 
-            this.lblAuthPortNumber.AutoSize = true;
-            this.lblAuthPortNumber.Location = new System.Drawing.Point(53, 126);
-            this.lblAuthPortNumber.Name = "lblAuthPortNumber";
-            this.lblAuthPortNumber.Size = new System.Drawing.Size(29, 13);
-            this.lblAuthPortNumber.TabIndex = 7;
-            this.lblAuthPortNumber.Text = "Port:";
-            // 
-            // boolAuthEnableSSL
-            // 
-            this.boolAuthEnableSSL.AutoSize = true;
-            this.boolAuthEnableSSL.Location = new System.Drawing.Point(175, 126);
-            this.boolAuthEnableSSL.Name = "boolAuthEnableSSL";
-            this.boolAuthEnableSSL.Size = new System.Drawing.Size(113, 17);
-            this.boolAuthEnableSSL.TabIndex = 4;
-            this.boolAuthEnableSSL.Text = "Enable SSL/TLS?";
-            this.boolAuthEnableSSL.UseVisualStyleBackColor = true;
-            // 
-            // lblAuthMailServer
-            // 
-            this.lblAuthMailServer.AutoSize = true;
-            this.lblAuthMailServer.Location = new System.Drawing.Point(6, 29);
-            this.lblAuthMailServer.Name = "lblAuthMailServer";
-            this.lblAuthMailServer.Size = new System.Drawing.Size(63, 13);
-            this.lblAuthMailServer.TabIndex = 10;
-            this.lblAuthMailServer.Text = "Mail Server:";
-            // 
-            // tboxAuthMailServer
-            // 
-            this.tboxAuthMailServer.Location = new System.Drawing.Point(88, 26);
-            this.tboxAuthMailServer.Name = "tboxAuthMailServer";
-            this.tboxAuthMailServer.Size = new System.Drawing.Size(200, 20);
-            this.tboxAuthMailServer.TabIndex = 0;
-            // 
             // menuMain
             // 
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -274,6 +277,16 @@ namespace SMTPTEST
             this.menuItemOffice365DirectSend.Name = "menuItemOffice365DirectSend";
             this.menuItemOffice365DirectSend.Size = new System.Drawing.Size(189, 22);
             this.menuItemOffice365DirectSend.Text = "Office365 Direct-Send";
+            // 
+            // boolOverrideMailFrom
+            // 
+            this.boolOverrideMailFrom.AutoSize = true;
+            this.boolOverrideMailFrom.Location = new System.Drawing.Point(222, 56);
+            this.boolOverrideMailFrom.Name = "boolOverrideMailFrom";
+            this.boolOverrideMailFrom.Size = new System.Drawing.Size(66, 17);
+            this.boolOverrideMailFrom.TabIndex = 10;
+            this.boolOverrideMailFrom.Text = "Override";
+            this.boolOverrideMailFrom.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -325,6 +338,7 @@ namespace SMTPTEST
         private System.Windows.Forms.MenuStrip menuMain;
         private System.Windows.Forms.ToolStripMenuItem testsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem menuItemOffice365DirectSend;
+        private System.Windows.Forms.CheckBox boolOverrideMailFrom;
     }
 }
 

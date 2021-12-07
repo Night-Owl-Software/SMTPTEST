@@ -32,6 +32,7 @@ namespace SMTPTEST
             tboxAuthPort.TextChanged -= OnValueChanged;
             tboxMailTo.TextChanged -= OnValueChanged;
             tboxMailFrom.TextChanged -= OnValueChanged;
+            boolOverrideMailFrom.CheckedChanged -= OnCheckedChanged;
 
             menuItemOffice365DirectSend.Click -= OnDirectSendTestItemClick;
 
@@ -44,8 +45,8 @@ namespace SMTPTEST
             tboxAuthPort.Text = "25";
             tboxMailFrom.Text = "";
             tboxMailTo.Text = "";
-            tboxMailSubject.Text = "";
-            tboxMailBody.Text = "";
+            tboxMailSubject.Text = "SMTP Test Email";
+            tboxMailBody.Text = "This is a test using the SMTP Troubleshooting application.";
 
             boolAuthEnableSSL.Checked = false;
 
@@ -56,6 +57,7 @@ namespace SMTPTEST
             tboxAuthPort.TextChanged += OnValueChanged;
             tboxMailTo.TextChanged += OnValueChanged;
             tboxMailFrom.TextChanged += OnValueChanged;
+            boolOverrideMailFrom.CheckedChanged += OnCheckedChanged;
 
             menuItemOffice365DirectSend.Click += OnDirectSendTestItemClick;
 
@@ -109,16 +111,13 @@ namespace SMTPTEST
                 formIsReady = false;
             }
 
+            if (boolOverrideMailFrom.Checked == false)
+            {
+                tboxMailFrom.Text = tboxAuthEmailAddress.Text;
+            }
 
-            // Check Final Validation
-            if (formIsReady)
-            {
-                btnSendMail.Enabled = true;
-            }
-            else
-            {
-                btnSendMail.Enabled = false;
-            }
+            // Use Final Validation
+            btnSendMail.Enabled = formIsReady;
         }
         private bool IsValidEmail(string emailAddress)
         {
@@ -136,6 +135,15 @@ namespace SMTPTEST
         private void OnValueChanged(object sender, EventArgs e)
         {
             ValidateAllFields();
+        }
+        private void OnCheckedChanged(object sender, EventArgs e)
+        {
+            tboxMailFrom.ReadOnly = !boolOverrideMailFrom.Checked;
+
+            if (boolOverrideMailFrom.Checked == false)
+            {
+                tboxMailFrom.Text = tboxAuthEmailAddress.Text;
+            }
         }
         private void OnSendMailClick(object sender, EventArgs e)
         {
